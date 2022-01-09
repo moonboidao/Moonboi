@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Moonboi </title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Tokenomics', 'Reflections'],
+          ['Reflections',     12],
+          ['Liquidity',       3],
+          ['Marketing',     1],
+          ['Locked',     84],
+        ]);
+
+        var options = {
+          pieHole: 0.9,
+          pieSliceTextStyle: {
+            color: '',
+          },
+          backgroundColor: {
+                    fill:'transparent' 
+                  },
+          chartArea: { 
+                    left: '2'
+                  },
+          legend:   { 
+                    position: 'labeled',
+                    textStyle: {color: 'white', fontSize: 12},
+                    listStyle: 'none'},
+                    pieSliceText: 'percentage',
+                    pieSliceBorderColor: 'none',
+                    maxLines: '3',
+          slices: {
+                    3: {color: 'green'},
+        }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+    <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
+
+  </head>
+  <body>
+      <div class="pagewrapper">
+
+          <div class="navwrapper">
+              <div class="nbarlogo">
+                     <a href=""><img  src="images/logo3.png" alt="logo"></a>
+              </div>
+              <div class="nbarlogo2">
+                <a href=""><img  src="images/moonboi.png" alt="logo"></a>
+                <h1 class="hidemob">/ BATTLE FOR THE STARS</h1>
+                <button id="btn-login" class="hidemob">connect wallet</button>
+              </div>
+         </div>
+              <div class="navbar">
+                <nav>
+            
+                    <label for="drop" class="toggle">menu</label>
+                    <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            <li><a href="#">Home</a></li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                <a href="#">About us</a>
+                             
+            
+                            </li>
+                            <li>
+            
+                            <!-- First Tier Drop Down -->
+                            <label for="drop-2" class="toggle">Docs +</label>
+                            <a href="#">Docs</a>
+                            <input type="checkbox" id="drop-2"/>
+                            <ul>
+                                <li><a href="#">Resources</a></li>
+                                <li><a href="#">Links</a></li>
+                                <li>
+                                   
+                                <!-- Second Tier Drop Down -->        
+                                <label for="drop-3" class="toggle">Tutorials +</label>
+                                <a href="#">Tutorials</a>         
+                                <input type="checkbox" id="drop-3"/>
+            
+                                <ul>
+                                    <li><a href="#">HTML/CSS</a></li>
+                                    <li><a href="#">jQuery</a></li>
+                                    <li><a href="#">Other</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                            </li>
+                            <li><a href="#">How to buy</a></li>
+                            <li><a href="#">Socials</a></li>
+                        </ul>
+                    </nav>
+              </div>
+            
+          <div class="boxwrapper">
+            <div class="content2 hidemob">
+                <div class="subcontent2">
+                    <ul>
+                        <li>boi compounding:</li>
+                            <ul>....</ul>
+                        <li>total earnings:</li>
+                            <ul>....</ul>
+                        <li>current reward:</li>
+                            <ul>....</ul>
+                        <button>claim</button>
+                    </ul>
+                </div>
+            </div>
+            <div class="content2 hidemob">
+                <div class="subcontent2">
+                    <video autoplay muted loop class="myVideo">
+                        <source src="videos/Roadv2.mp4" type="video/mp4">
+                      </video>
+                </div>
+            </div>
+            <div class="content hide"> 
+                <h1>Dashboard</h1>
+                <div class="subcontent2">
+                    <ul>
+                        <li>boi compounding:</li>
+                            <ul>....</ul>
+                        <li>total earnings:</li>
+                            <ul>....</ul>
+                        <li>current reward:</li>
+                            <ul>....</ul>
+                        <button>claim</button>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="content"> 
+                <div class="subcontent"> 
+                    <h1>About us</h1> 
+                    <p> The future of Decentralized AVAX  is here. With tokenomics such as burns with every txn and single asset staking, holders are incentivized to hold. Furthermore with this time-based contract sellers and paper hands are taxed 1%; if they sell within the first day of buying. SPELLPRINTER has many things planned for those that are patient...</p>
+                </div>
+            </div>
+
+                <div class="boxwrapper">
+                        <div class="content">
+                        <div class="subcontent">
+                        <h1>How to buy</h1>
+                        <p> The future of Decentralized AVAX  is here. With tokenomics such as burns with every txn and single asset staking, holders are incentivized to hold. Furthermore with this time-based contract sellers and paper hands are taxed 1%; if they sell within the first day of buying. SPELLPRINTER has many things planned for those that are patient...</p>
+                        </div>
+                        </div>
+
+                    <div class="content">
+                        
+                        <div class="subcontent">
+                    <h1>Tokenomics</h1>
+                        <div id="donutchart">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+      </div>
+      </div>
+      <div class="footwrapper">
+        <footer class="footer">
+            <div class="footer__addr">
+              <div class="footer__logo">
+                <a href=""><img  src="images/moonboi.png" alt="logo"></a></div>
+              
+              
+              
+              <address>
+                <p> The future of Decentralized AVAX  is here. With tokenomics such as burns with every txn and single asset staking, holders are incentivized to hold.</p>
+            
+              </address>
+            </div>
+            
+            <ul class="footer__nav">
+              <li class="nav__item">
+                <h2 class="nav__title">Media</h2>
+          
+                <ul class="nav__ul">
+                  <li>
+                    <a href="#">Online</a>
+                  </li>
+          
+                  <li>
+                    <a href="#">Print</a>
+                  </li>
+                      
+                  <li>
+                    <a href="#">Alternative Ads</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li class="nav__item nav__item--extra">
+                <h2 class="nav__title">Support</h2>
+                
+                <ul class="nav__ul nav__ul--extra">
+                  <li>
+                    <a href="#">Bridge</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Purchase</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Yield farm</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Automation</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">RugFi Dao</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">web3 World</a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li class="nav__item">
+                <h2 class="nav__title">Legal</h2>
+                
+                <ul class="nav__ul">
+                  <li>
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Terms of Use</a>
+                  </li>
+                  
+                  <li>
+                    <a href="#">Sitemap</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            
+            <div class="legal">
+                <p>&copy; 2022 Moonboi. All rights reserved.</p>
+            </div>
+          </footer>
+    </div>
+     <!-- scripts -->
+     <script src="js/index.js"></script>
+</body>
+</html>

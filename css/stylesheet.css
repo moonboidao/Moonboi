@@ -1,0 +1,716 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    }
+    
+    body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+          /*Fallback if gradeints don't work */
+          background: #1c285a;
+          /*Linear gradient... */
+          background: 
+          radial-gradient(
+            at center, #062012, #21272b
+            );
+        
+    }
+
+  
+    
+    *.unselectable {
+       -moz-user-select: -moz-none;
+       -khtml-user-select: none;
+       -webkit-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+    }
+
+
+    
+    .subcontent  {
+        position: relative;
+    }
+
+
+    .toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+    width: 100%;
+    position: sticky;
+    z-index: 1;
+    
+}
+
+
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	background-color: #254441;
+	}
+
+    nav ul a:active{
+        color: white;
+        text-decoration: none;
+        }    
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #000000; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color: #000000; 
+    color: white;
+	text-decoration:none;
+    
+
+}
+
+
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+    z-index: 100;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+    height: 40px;
+	float:none;
+	display:list-item;
+	position: relative;
+    z-index: 9999;
+}
+
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color: #254441;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: #000000;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #000000;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #212121; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+
+
+}
+
+
+
+    @media screen and (min-width: 1200px) and (max-width: 1600px){
+
+
+
+        .pagewrapper {
+            width: 100%;
+            height: 120vh;
+            color: white;
+            z-index: -111;
+            
+        }
+
+        .navwrapper{
+            width: 100%;
+            height: 8%;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .nbarlogo img {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            margin: 8px 15px;
+        }
+
+        .nbarlogo {
+            float: left;
+            width: 80px;
+        }
+
+        .nbarlogo2 {
+            float: left;
+            width: 1165px;
+        }
+        .nbarlogo2 img{
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 60px;
+        }
+
+        .nbarlogo2 h1{
+            font-size: 20px;
+            float: left;
+            margin-top: 30px;
+        }
+
+        .navbar {
+            position: sticky;
+            width: 100%;
+            height: 8%;
+        }
+
+        .boxwrapper {
+            width: 100%;
+            height: 40%;
+            margin: 20px 0px auto;
+            text-align: center; 
+        }
+
+
+
+        
+        .content {
+           display: inline-block;
+           position: relative;
+           float: left;
+           margin: 10px 15px;
+           width:600px;
+           height: 250px;
+           background-color: rgba(0,0,0,0.7);
+           border-radius: 15px 15px 15px 15px;
+           box-shadow: 2px 2px rgba(0,0,0,0.7);
+           overflow: hidden;
+           z-index: -9999;
+        }
+
+        .content2 {
+            display: inline-block;
+            float: left;
+            margin: 10px 15px;
+            width:283.8px;
+            height: 250px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 15px 15px 15px 15px;
+            box-shadow: 2px 2px rgba(0,0,0,0.7);
+            overflow: hidden;
+            z-index: -3;
+        }
+
+        .content2 li {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+
+        .nbarlogo2 button {
+            float: right;
+            height: 30px;
+            width: 250px;
+            font-size: 11px;  
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background: linear-gradient(45deg, transparent 20%, #070707 5%);
+            border: 0;
+            color: #fff;
+            letter-spacing: 3px;
+            line-height: 30px;
+            box-shadow: 6px 0px 0px #00E6F6;
+            outline: transparent;
+            position: relative;
+            cursor: pointer;
+          }
+
+          .nbarlogo2 button:hover {
+            opacity: 0.7;
+          }
+
+
+        .subcontent {
+            position: relative;
+            z-index: -1;
+            width: 70%;
+            height: 100%;
+        }
+
+        .subcontent2 {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index:-1;
+        }
+
+        .subcontent2 button {
+            height: 30px;
+            width: 273px;
+            font-size: 11px;  
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background: linear-gradient(45deg, transparent 20%, #254441 5%);
+            border: 0;
+            color: #fff;
+            letter-spacing: 3px;
+            line-height: 30px;
+            margin-top: 10px;
+            box-shadow: 6px 0px 0px #00E6F6;
+            outline: transparent;
+            position: relative;
+            cursor: pointer;
+          }
+
+          .subcontent2 button:hover {
+            opacity: 0.7;
+          }
+
+        .myVideo {
+            position: relative;
+            width: 450px !important;
+            height: auto !important;
+        }
+
+        #donutchart {
+            width: 400px; 
+            height: 200px;
+            margin-left: 60px;
+        }
+
+        
+    .footwrapper {
+        width: 100%;
+        height: 34%;
+        z-index: 100;
+        background-color: rgba(0,0,0,0.5);
+        overflow: hidden;
+        }
+        
+        .footer {
+            display: flex;
+            flex-flow: row wrap;
+            padding: 30px 30px 20px 30px;
+            
+            color: #fffbfb;
+            border-top: 1px solid #181616;
+            z-index: 2;
+          }
+          
+          .footer > * {
+            flex:  1 100%;
+          }
+          
+          .footer__addr {
+            margin-right: 1.25em;
+            margin-bottom: 2em;
+          }
+          
+
+          .footer__logo img{
+            width: 100px;
+            height: 30px;
+          }
+          
+          .footer__addr h2 {
+            margin-top: 1.3em;
+            font-size: 5px;
+            font-weight: 400;
+          }
+          
+          .nav__title {
+            font-weight: 400;
+            font-size: 15px;
+          }
+          
+          .footer address {
+            font-style: normal;
+            color: #fffbfb;
+            margin: 12px 0px;
+          }
+          
+          
+          .footer ul {
+            list-style: none;
+            padding-left: 0;
+          }
+          
+          .footer li {
+            line-height: 2em;
+          }
+          
+          .footer a {
+            text-decoration: none;
+          }
+          
+          .footer__nav {
+            display: flex;
+              flex-flow: row wrap;
+          }
+          
+          .footer__nav > * {
+            flex: 1 50%;
+            margin-right: 1.25em;
+          }
+          
+          .nav__ul a {
+            
+            color: #fffbfb;
+            opacity: 0.6;
+          }
+          
+          .nav__ul--extra {
+            column-count: 2;
+            column-gap: 1.25em;
+          }
+          
+          .legal {
+            position: relative;
+            text-align: center;
+            color: #fffbfb;
+          }
+            .footer__nav > * {
+              flex: 1;
+            }
+            
+            .nav__item--extra {
+              flex-grow: 2;
+            }
+            
+            .footer__addr {
+              flex: 1 0px;
+            }
+            
+            .footer__nav {
+              flex: 2 0px;
+            }
+     
+        .hide {
+            display: none;
+        }    
+    }
+    
+
+
+    
+
+    @media screen and (min-width: 200px) and (max-width: 800px){
+        .pagewrapper {
+            width: 100%;
+            height: 140vh;
+            color: white;
+            
+        }
+
+        .navwrapper{
+            width: 100%;
+            height: 8%;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .nbarlogo img {
+            float:left;
+            width: 10%;
+            height: 10%;
+            margin: 5px 20px;
+        }
+
+        .nbarlogo2 img {
+            width: 40%;
+            height: 30%;
+        }
+
+        .navbar {
+            width: 95%;
+            height: 10%;
+            position: relative;
+            display: block;
+            z-index: 1;
+        }
+
+        .boxwrapper {
+            width: 100%;
+            height: 100%;
+            margin: 20px 0  ;
+            z-index: 0;
+        }
+
+
+          .content {
+            width:90%;
+            height: 35%;
+            margin-top: 10px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 15px 15px 15px 15px;
+            box-shadow: 2px 2px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+
+        
+        .subcontent {
+            width: 70%;
+        }
+
+        #donutchart {
+            width:200px; height: 200px;
+            margin-top: -40px;
+            margin-right: 80px;
+        }
+
+        nav ul li {
+            display:block;
+            width: 94%;
+        }
+
+        .footwrapper {
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            margin-top: 560px;
+            background-color: rgba(0,0,0,0.5);
+            }
+
+            .footer {
+                display: flex;
+                flex-flow: row wrap;
+                padding: 30px 30px 20px 30px;
+                
+                color: #fffbfb;
+                border-top: 1px solid #181616;
+                z-index: 2;
+              }
+              
+              .footer > * {
+                flex:  1 100%;
+              }
+              
+              .footer__addr {
+                margin-right: 1.25em;
+                margin-bottom: 2em;
+              }
+              
+    
+              .footer__logo img{
+                width: 100px;
+                height: 30px;
+              }
+              
+              .footer__addr h2 {
+                margin-top: 1.3em;
+                font-size: 5px;
+                font-weight: 400;
+              }
+              
+              .nav__title {
+                font-weight: 400;
+                font-size: 15px;
+              }
+              
+              .footer address {
+                font-style: normal;
+                color: #fffbfb;
+                margin: 12px 0px;
+              }
+              
+              
+              .footer ul {
+                list-style: none;
+                padding-left: 0;
+              }
+              
+              .footer li {
+                line-height: 2em;
+              }
+              
+              .footer a {
+                text-decoration: none;
+              }
+              
+              .footer__nav {
+                display: flex;
+                  flex-flow: row wrap;
+              }
+              
+              .footer__nav > * {
+                flex: 1 50%;
+                margin-right: 1.25em;
+              }
+              
+              .nav__ul a {
+                
+                color: #fffbfb;
+                opacity: 0.6;
+              }
+              
+              .nav__ul--extra {
+                column-count: 2;
+                column-gap: 1.25em;
+              }
+              
+              .legal {
+                position: relative;
+                text-align: center;
+                color: #fffbfb;
+              }
+                .footer__nav > * {
+                  flex: 1;
+                }
+                
+                .nav__item--extra {
+                  flex-grow: 2;
+                }
+                
+                .footer__addr {
+                  flex: 1 0px;
+                }
+                
+                .footer__nav {
+                  flex: 2 0px;
+                }
+
+        .hidemob {
+            display: none;
+        }
+
+    }
