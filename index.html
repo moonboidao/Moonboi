@@ -1,270 +1,267 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Moonboi </title>
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Tokenomics', 'Reflections'],
-          ['Reflections',     12],
-          ['Liquidity',       3],
-          ['Marketing',     1],
-          ['Locked',     84],
-        ]);
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonboi</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/icons/favicon.ico" type="image/ico" sizes="16x16">
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/moralis/dist/moralis.js"></script>   
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="text-gray-600 font-body ">
 
-        var options = {
-          pieHole: 0.9,
-          pieSliceTextStyle: {
-            color: '',
-          },
-          backgroundColor: {
-                    fill:'transparent' 
-                  },
-          chartArea: { 
-                    left: '2'
-                  },
-          legend:   { 
-                    position: 'labeled',
-                    textStyle: {color: 'white', fontSize: 12},
-                    listStyle: 'none'},
-                    pieSliceText: 'percentage',
-                    pieSliceBorderColor: 'none',
-                    maxLines: '3',
-          slices: {
-                    3: {color: 'green'},
-        }
-        };
+<header class="">
+  <nav class="bg-black fixed inset-x-0">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-4">
+                <!-- logo -->
+                <div> <a href="#" class="flex items-center py-5 text-gray-700 hover:text-gray-900"> <i class='bx bxl-medium-old mr-1 text-xl mb-1 text-blue-400'></i> 
+                  <img src="img/logo3.png" class="logo h-10  "> </a> </div> <!-- primary nav -->
+                <div class="hidden md:flex items-center space-x-1"> <a href="index.html" class="py-5 px-3 text-gray-700 hover:text-gray-900">Home</a> <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">About us</a> <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Docs +</a> <a href="marketplace.html" class="py-5 px-3 text-gray-700 hover:text-gray-900">Marketplace</a> </div>
+            </div> <!-- secondary nav -->
+            <div class="hidden md:flex items-center space-x-1"> <a href="" class="py-5 px-3"></a> <a href="" class="py-2 px-3 bg-red-700 text-white hover:bg-yellow-300 text-sm hover:text-yellow-800 rounded transition duration-300">Connect wallet</a> 
+            </div> <!-- mobile button goes here -->
+            <div class="md:hidden flex items-center"> <button class="mobile-menu-button focus:outline-none"> <i class='bx bx-menu text-3xl mt-1'></i> </button> </div>
+        </div>
+    </div> <!-- mobile menu -->
+    <div class="mobile-menu hidden md:hidden"> <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a> <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">About us</a> <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Docs +</a> <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Marketplace</a> </div>
+</nav>
+</header>
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
-    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
-    <link rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
+ 
+ 
 
-  </head>
-  <body>
-      <div class="pagewrapper">
 
-          <div class="navwrapper">
-              <div class="nbarlogo">
-                     <a href=""><img  src="images/logo3.png" alt="logo"></a>
-              </div>
-              <div class="nbarlogo2">
-                <a href=""><img  src="images/moonboi.png" alt="logo"></a>
-                <h1 class="hidemob">/ BATTLE FOR THE STARS</h1>
-                <button id="btn-login" class="hidemob">connect wallet</button>
-              </div>
-         </div>
-              <div class="navbar">
-                <nav>
-            
-                    <label for="drop" class="toggle">menu</label>
-                    <input type="checkbox" id="drop" />
-                        <ul class="menu">
-                            <li><a href="#">Home</a></li>
-                            <li>
-                                <!-- First Tier Drop Down -->
-                                <a href="#">About us</a>
-                             
-            
-                            </li>
-                            <li>
-            
-                            <!-- First Tier Drop Down -->
-                            <label for="drop-2" class="toggle">Docs +</label>
-                            <a href="#">Docs</a>
-                            <input type="checkbox" id="drop-2"/>
-                            <ul>
-                                <li><a href="#">Resources</a></li>
-                                <li><a href="#">Links</a></li>
-                                <li>
-                                   
-                                <!-- Second Tier Drop Down -->        
-                                <label for="drop-3" class="toggle">Tutorials +</label>
-                                <a href="#">Tutorials</a>         
-                                <input type="checkbox" id="drop-3"/>
-            
-                                <ul>
-                                    <li><a href="#">HTML/CSS</a></li>
-                                    <li><a href="#">jQuery</a></li>
-                                    <li><a href="#">Other</a></li>
-                                </ul>
-                                </li>
-                            </ul>
-                            </li>
-                            <li><a href="#">How to buy</a></li>
-                            <li><a href="#">Socials</a></li>
-                        </ul>
-                    </nav>
-              </div>
-            
-          <div class="boxwrapper">
-            <div class="content2 hidemob">
-                <div class="subcontent2">
-                    <ul>
-                        <li>boi compounding:</li>
-                            <ul>....</ul>
-                        <li>total earnings:</li>
-                            <ul>....</ul>
-                        <li>current reward:</li>
-                            <ul>....</ul>
-                        <button>claim</button>
-                    </ul>
-                </div>
+<section class=" py-32 flex flex-wrap p-5  flex-col md:flex-row ">
+  <div class="p-4 md:w-1/4">
+    <div class="h-80  bg-black shadow-lg rounded-lg overflow-hidden">
+        <div class="p-6">
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-100 mb-1">ABOUT US</h2>
+            <p class="leading-relaxed text-gray-500 mb-3">Moonboi is the collective brain-child of our community. Risen from the ashes of their demise they chose to create a better world. Not just for themselves but for everyone.  </p>
+            <div class="flex items-center flex-wrap">
+                <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                </svg>
+                </a>
             </div>
-            <div class="content2 hidemob">
-                <div class="subcontent2">
-                    <video autoplay muted loop class="myVideo">
-                        <source src="videos/Roadv2.mp4" type="video/mp4">
-                      </video>
-                </div>
-            </div>
-            <div class="content hide"> 
-                <h1>Dashboard</h1>
-                <div class="subcontent2">
-                    <ul>
-                        <li>boi compounding:</li>
-                            <ul>....</ul>
-                        <li>total earnings:</li>
-                            <ul>....</ul>
-                        <li>current reward:</li>
-                            <ul>....</ul>
-                        <button>claim</button>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="content"> 
-                <div class="subcontent"> 
-                    <h1>About us</h1> 
-                    <p> The future of Decentralized AVAX  is here. With tokenomics such as burns with every txn and single asset staking, holders are incentivized to hold. Furthermore with this time-based contract sellers and paper hands are taxed 1%; if they sell within the first day of buying. SPELLPRINTER has many things planned for those that are patient...</p>
-                </div>
-            </div>
-
-                <div class="boxwrapper">
-                        <div class="content">
-                        <div class="subcontent">
-                        <h1>How to buy</h1>
-                        <p> The future of Decentralized AVAX  is here. With tokenomics such as burns with every txn and single asset staking, holders are incentivized to hold. Furthermore with this time-based contract sellers and paper hands are taxed 1%; if they sell within the first day of buying. SPELLPRINTER has many things planned for those that are patient...</p>
-                        </div>
-                        </div>
-
-                    <div class="content">
-                        
-                        <div class="subcontent">
-                    <h1>Tokenomics</h1>
-                        <div id="donutchart">
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-
-      </div>
-      </div>
-      <div class="footwrapper">
-        <footer class="footer">
-            <div class="footer__addr">
-              <div class="footer__logo">
-                <a href=""><img  src="images/moonboi.png" alt="logo"></a></div>
-              
-              
-              
-              <address>
-                <p> The future of Decentralized AVAX  is here. With tokenomics such as burns with every txn and single asset staking, holders are incentivized to hold.</p>
-            
-              </address>
-            </div>
-            
-            <ul class="footer__nav">
-              <li class="nav__item">
-                <h2 class="nav__title">Media</h2>
-          
-                <ul class="nav__ul">
-                  <li>
-                    <a href="#">Online</a>
-                  </li>
-          
-                  <li>
-                    <a href="#">Print</a>
-                  </li>
-                      
-                  <li>
-                    <a href="#">Alternative Ads</a>
-                  </li>
-                </ul>
-              </li>
-              
-              <li class="nav__item nav__item--extra">
-                <h2 class="nav__title">Support</h2>
-                
-                <ul class="nav__ul nav__ul--extra">
-                  <li>
-                    <a href="#">Bridge</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">Purchase</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">Yield farm</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">Automation</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">RugFi Dao</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">web3 World</a>
-                  </li>
-                </ul>
-              </li>
-              
-              <li class="nav__item">
-                <h2 class="nav__title">Legal</h2>
-                
-                <ul class="nav__ul">
-                  <li>
-                    <a href="#">Privacy Policy</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">Terms of Use</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">Sitemap</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            
-            <div class="legal">
-                <p>&copy; 2022 Moonboi. All rights reserved.</p>
-            </div>
-          </footer>
+        </div>
     </div>
+</div> 
+<div class="p-4 md:w-1/4">
+  <div class="h-80  bg-black shadow-lg rounded-lg overflow-hidden">
+      <div class="p-6">
+          <h2 class="tracking-widest text-xs title-font font-medium text-gray-100 mb-1">TOKENOMICS</h2>
+          <p class="leading-relaxed text-gray-500 mb-3">
+            Every transaction has a tax of 16% of which 10% will be distributed amongst holders in MIM and MBOI (8/2%). The remaining will be divided in the LP and treasury.
+          </p>
+          <div class="flex items-center flex-wrap">
+              <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+              </svg>
+              </a>
+          </div>
+      </div>
+  </div>
+</div> 
+
+<div class="p-4 md:w-1/2">
+  <div class="h-80  bg-black shadow-lg rounded-lg overflow-hidden">
+      <div class="p-6">
+          <h2 class="tracking-widest text-xs title-font font-medium text-gray-100 mb-1">VISION</h2>
+          <p class="leading-relaxed text-gray-500 mb-3">The divine in me sees the divine in you. The light that shines from any person that is not corrupted by greed and power. We as a sovereign collective have the power to co-create and to manifest whatever we think is possible within our earthly boundaries. That is what defines us at Moonboi. We have transcended individuality and made it our goal to co-create a platform where everyone can express themselves. </p>
+          <div class="flex items-center flex-wrap">
+              <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+              </svg>
+              </a>
+          </div>
+      </div>
+  </div>
+</div> 
+
+
+ 
+<div class="p-4 md:w-1/2">
+  <div class="h-80  bg-black shadow-lg rounded-lg overflow-hidden">
+      <div class="p-6">
+          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">VISION</h2>
+          <p class="leading-relaxed mb-3">Moonboi is a Community based project that will be governed by the loyal holders of our native token. Moonboi is a Community based project that will be governed by the loyal holders of our native token. Moonboi is a Community based project that will...
+            Moonboi is a Community based project that will be governed by the loyal holders of our native token. Moonboi is a Community based project that will be governed by the loyal holders of our native token. Moonboi is a Community based project that will...Moonboi is a Community based project that will be governed by the loyal holders of our native token. Moonboi is a Community based project
+          </p>
+          <div class="flex items-center flex-wrap">
+              <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+              </svg>
+              </a>
+          </div>
+      </div>
+  </div>
+</div> 
+
+
+
+<div class="p-4 md:w-1/2">
+  <div class="h-80  bg-black shadow-lg rounded-lg overflow-hidden">
+      <div class="p-6">
+      <img src="img/pipboi.jpg" class="h-18 ">
+          </div>
+      </div>
+  </div>
+</div> 
+
+<div class="p-4 md:w-full">
+  <div class="h-80  bg-black shadow-lg rounded-lg overflow-hidden">
+      <div class="p-6">
+          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">VISION</h2>
+          <p class="leading-relaxed mb-3">
+            The divine in me sees the divine in you. The light that shines from any person that is not corrupted by greed and power. We as a sovereign collective have the power to co-create and to manifest whatever we think is possible within our earthly boundaries. That is what defines us at Moonboi. We have transcended individuality and made it our goal to co-create a platform where everyone can express themselves. 
+          </p>
+          <div class="flex items-center flex-wrap">
+              <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+              </svg>
+              </a>
+          </div>
+      </div>
+  </div>
+</div> 
+
+</section> 
+ 
+ 
+ 
+ 
+<footer class="text-gray-600 body-font bg-black">
+  <div class="container px-5 py-24 mx-auto flex md:items-left lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-left md:text-left md:mt-0 mt-10">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <img src="img/logo3.png" class="h-6">
+      </a>
+      <p class="mt-2 text-sm text-gray-500">Powered by the "Vigil Hero Club".</p>
+    </div>
+    <div class="flex-grow flex flex-wrap md:pr-20 px-12 -mb-10 md:text-left text-center order-first">
+      <div class="lg:w-1/4 md:w-1/2 w-40  px-4">
+        <h2 class="title-font font-medium text-gray-200 tracking-widest text-sm mb-3">MEDIA</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Online</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Print</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Alternative Ads</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-40 px-4">
+        <h2 class="title-font font-medium text-gray-200 tracking-widest text-sm mb-3">SUPPORT</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Bridge</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Purchase</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Yield farm</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Automation</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-40 px-4">
+        <h2 class="title-font font-medium text-gray-200 tracking-widest text-sm mb-3">PARTNERSHIPS</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">RugFi DAO</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Enjimon Pocket-Monsters</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-40 px-4">
+        <h2 class="title-font font-medium text-gray-200 tracking-widest text-sm mb-3">LEGAL</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Privacy policy</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Terms of use</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Sitemap</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">F.A.Q.</a>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="bg-black">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="text-gray-500 text-sm text-center sm:text-left">© 2021 Moonboi —
+        <a href="https://twitter.com/moonboidao" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@moonboidao</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a class="text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+ 
+   
+   
+
+
      <!-- scripts -->
-     <script src="js/index.js"></script>
+     <script>
+       document.addEventListener("DOMContentLoaded", function(event) {
+  const btn = document.querySelector("button.mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
+  
+  
+  btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+  });
+  
+  });
+     </script>
 </body>
 </html>
